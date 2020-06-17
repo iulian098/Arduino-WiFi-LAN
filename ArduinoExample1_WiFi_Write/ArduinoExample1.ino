@@ -9,7 +9,7 @@
 
 #define PORT 80
 
-const char WiFiAPPSK[] = "iulian098";     //Arduino password
+const char WiFiAPPSK[] = "ArduinoPass";     //Arduino password
 
 //Setup wifi data
 const char* ssid = "Your WiFi ssid";

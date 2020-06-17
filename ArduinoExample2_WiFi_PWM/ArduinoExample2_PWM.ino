@@ -9,7 +9,7 @@
 
 #define PORT 80
 
-const char WiFiAPPSK[] = "iulian098";     //Arduino password
+const char WiFiAPPSK[] = "ArduinoPass";     //Arduino password
 
 //Setup wifi data
 const char* ssid = "Your WiFi ssid";
@@ -29,12 +29,9 @@ int pin0 = D0; // D0 is for NodeMCU, please change it to match the Arduino you u
 
 void setup()
 {
-
   Serial.begin(115200);
   Serial.println("Starting arduino...");
   delay(50);
-
-  pinMode(pin0, INPUT);
   
   Serial.println("Status : " + String(Status));
   
@@ -100,7 +97,8 @@ void HtmlPage(){
           client.println("</head>");
           client.println("<body>");
           client.println("<form method=\"get\">");
-          ReadData(client);
+          HtmlButtons(client);
+          Commands();
           client.println("</form>");
           client.println("</body>");
           client.println("</html>");
@@ -124,11 +122,33 @@ void HtmlPage(){
   } 
 }
 
-void ReadData(WiFiClient cl){
-  //You can also use analogRead function
-  //<br/> is used to create new line
-  //id is used by application to read data
-  cl.println("<br/><a id=\"pin0\">" + String(digitalRead(pin0)) + "</a>")
+void HtmlButtons(WiFiClient cl){
+  //Show buttons to html page
+  cl.println("<input type=\"button\" value=\"VALUE 0\" onclick=location.href=\"/?PIN0[0]\">");
+  cl.println("<input type=\"button\" value=\"VALUE 100\" onclick=location.href=\"/?PIN0[100]\">");
+  cl.println("<input type=\"button\" value=\"VALUE 150\" onclick=location.href=\"/?PIN0[150]\">");
+  cl.println("<input type=\"button\" value=\"VALUE 200\" onclick=location.href=\"/?PIN0[200]\">");
+  cl.println("<input type=\"button\" value=\"VALUE 255\" onclick=location.href=\"/?PIN0[255]\">");
+}
+
+void Commands(){
+	
+  //To change value you need to send '/?PIN0[yourValue]'
+  
+  if (request.indexOf("/?PIN0") > -1)
+  { 
+	int startIndex = request.indexOf("[");
+	int endIndex = request.indexOf("]");
+	String val;
+	
+	for(int i = startIndex+1; i < endIndex; i++){
+      val += request[i];  
+    }
+	
+    Serial.println("LED value: " + val);
+    analogWrite(D0, val.toInt());
+  }
+  
 }
 
 void setupWiFi()
