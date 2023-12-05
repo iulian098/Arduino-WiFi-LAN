@@ -1,0 +1,39 @@
+Privacy Policy for Arduino WiFi/LAN Controller
+
+This Privacy Policy outlines how Arduino WiFi/LAN Controller collects, uses, and protects user information in connection with the display of advertisements.
+
+1. Information We Collect
+
+We may collect certain information to provide and improve our ad services, including:
+
+Device information (e.g., device type, operating system)
+Unique device identifiers
+IP address
+Location data (if you grant permission)
+2. Advertisements
+
+Our app may display third-party advertisements. Advertisers may collect information to provide personalized ads. This data may include:
+
+Advertising identifiers (e.g., Google Ad ID, Apple IDFA)
+User engagement with ads
+3. Ad Partners
+
+We may work with ad partners to deliver ads. These partners may have their own privacy policies. Please review their policies for information on how they collect and use data.
+
+4. Opt-out Options
+
+You can opt out of personalized ads by adjusting your device settings. For Android, visit Android Ad Settings. For iOS, visit Apple Ad Settings.
+
+5. Security
+
+We take reasonable measures to protect user information but cannot guarantee its security. By using our app, you acknowledge and accept these risks.
+
+6. Children's Privacy
+
+Our app is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us to remove it.
+
+7. Changes to This Policy
+
+We may update this Privacy Policy to reflect changes in our practices or for legal reasons. Continued use of our app after such changes constitutes acceptance of the updated policy.
+
+If you have questions or concerns about our Privacy Policy, contact us at craciuniulian25@gmail.com
